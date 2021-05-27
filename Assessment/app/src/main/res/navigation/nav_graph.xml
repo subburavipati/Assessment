@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/enterLocationFragment">
+
+    <fragment
+        android:id="@+id/enterLocationFragment"
+        android:name="com.subbu.assessment.fragments.EnterLocationFragment"
+        android:label="Enter Location"
+        tools:layout="@layout/fragment_enter_location">
+        <action
+            android:id="@+id/enterLocationToLocationWeatherDetails"
+            app:destination="@id/locationWeatherDetailsFragment"
+            app:popUpTo="@id/enterLocationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/locationWeatherDetailsFragment"
+        android:name="com.subbu.assessment.fragments.LocationWeatherDetailsFragment"
+        android:label="City Name"
+        tools:layout="@layout/fragment_location_weather_details">
+        <action
+            android:id="@+id/locationWeatherDetailsToWeatherDetailsDescription"
+            app:destination="@id/weatherDetailsDescriptionFragment"
+            app:popUpTo="@id/locationWeatherDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/weatherDetailsDescriptionFragment"
+        android:name="com.subbu.assessment.fragments.WeatherDetailDescriptionFragment"
+        android:label="City Name"
+        tools:layout="@layout/fragment_weather_details_description" />
+
+</navigation>
